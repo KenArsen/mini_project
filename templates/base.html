@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Категории</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="#">Профиль</a></li>
+                    <li><a href="#">Закладки</a></li>
+                    <li><a href="{% url 'account:logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:login' %}">Войти</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2023 Мой Блог. Все права защищены.</p>
+    </footer>
+</body>
+</html>

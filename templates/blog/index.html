@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Главная - Мой Блок {% endblock title %}
+
+{% block content %}
+    <section class="latest-posts">
+    <h2>Последние статьи</h2>
+    {% for post in posts %}
+        <article>
+        <h3><a href="#">{{ post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+        <p>Автор: {{ post.owner }}</p>
+        <p>Дата публикации: {{ post.created_at|date:'d M Y' }}</p>
+        </article>
+    {% endfor %}
+    </section>
+{% endblock content %}
