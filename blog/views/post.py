@@ -18,10 +18,12 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    post_categories = post.category.all()
     comments = post.comments.all()
     context = {
         'post': post,
         'comments': comments,
+        'post_categories': post_categories,
     }
     return render(request, 'blog/post_detail.html', context)
 

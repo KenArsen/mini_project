@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Категории {% endblock title %}
+
+{% block content %}
+    <section class="categories">
+        <h2>Все категории</h2>
+        <ul>
+            {% for category in categories %}
+                <li><a href="{% url 'blog:category-detail' category.pk %}">{{ category.name }}</a></li>
+            {% empty %}
+                <p>Категории отсутствуют</p>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock content %}

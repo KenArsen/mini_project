@@ -11,8 +11,8 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Категории</a></li>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'blog:category-list' %}">Категории</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="#">Профиль</a></li>
                     <li><a href="#">Закладки</a></li>
