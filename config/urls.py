@@ -1,19 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import render
-
-from blog.models import Post, Category
-
-
-def home(request):
-    posts = Post.objects.all()
-    categories = Category.objects.all()
-    context = {
-        'posts': posts,
-        'categories': categories,
-    }
-    return render(request, 'blog/index.html', context)
-
+from blog.views.home import home
 
 urlpatterns = [
     path('', home, name='home'),

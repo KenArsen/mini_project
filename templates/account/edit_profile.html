@@ -5,7 +5,7 @@
 {% block content %}
     <div class="auth-container">
         <h2>Редактирование профиля</h2>
-        <form method="post">
+        <form method="post" action="{% url 'account:profile-edit' %}">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="auth-btn">Сохранить изменения</button>

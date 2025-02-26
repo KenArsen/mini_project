@@ -70,3 +70,9 @@ class LoginForm(forms.Form):
         required=True,
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
     )
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'age')

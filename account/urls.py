@@ -1,5 +1,6 @@
 from django.urls import path
 from account.views.user import register, user_login, user_logout, activate
+from account.views.profile import profile, edit_profile
 from account.views.password import (
     CustomPasswordChangeView,
     CustomPasswordChangeDoneView,
@@ -14,6 +15,8 @@ app_name = 'account'
 urlpatterns = [
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
+    path('profile/', profile, name='profile'),
+    path('profile/edit/', edit_profile, name='profile-edit'),
     path('register/', register, name='register'),
     path('activate/<uidb64>/<token>/', activate, name='activate'),
 ]

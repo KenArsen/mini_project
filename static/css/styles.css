@@ -42,6 +42,7 @@ footer {
     width: 100%;
 }
 
+/* Категории */
 .categories ul {
     list-style-type: none;
     padding: 0;
@@ -56,11 +57,13 @@ footer {
     color: #333;
 }
 
+/* Посты */
 .latest-posts article {
     background-color: #fff;
     padding: 15px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 .latest-posts article h3 {
@@ -70,6 +73,59 @@ footer {
 .latest-posts article a {
     text-decoration: none;
     color: #008CBA;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Страница деталей поста */
+.post-detail {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.post-detail h1 {
+    color: #333;
+}
+
+.post-detail .post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.post-detail .post-content {
+    line-height: 1.6;
+}
+
+.edit-btn, .delete-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #008CBA;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
 }
 
 /* Стили для страниц аутентификации */
@@ -92,10 +148,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.auth-container form p {
-    margin: 0;
 }
 
 .auth-container form label {
@@ -132,7 +184,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Стили для страницы профиля */
+/* Стили для профиля */
 .profile-container {
     max-width: 800px;
     margin: 20px auto;
@@ -148,12 +200,10 @@ footer {
 }
 
 .profile-header h1 {
-    margin-bottom: 10px;
     color: #333;
 }
 
 .profile-header p {
-    margin: 5px 0;
     color: #666;
 }
 
@@ -172,13 +222,12 @@ footer {
     opacity: 0.8;
 }
 
+/* Список постов профиля */
 .profile-posts, .profile-bookmarks, .profile-likes {
     margin-bottom: 30px;
 }
 
 .profile-posts h2, .profile-bookmarks h2, .profile-likes h2 {
-    margin-bottom: 15px;
-    color: #333;
     border-bottom: 2px solid #008CBA;
     padding-bottom: 5px;
 }
@@ -189,7 +238,6 @@ footer {
 }
 
 .profile-posts li, .profile-bookmarks li, .profile-likes li {
-    margin-bottom: 10px;
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 4px;
@@ -197,7 +245,6 @@ footer {
 }
 
 .profile-posts a, .profile-bookmarks a, .profile-likes a {
-    text-decoration: none;
     color: #008CBA;
 }
 
@@ -205,13 +252,7 @@ footer {
     text-decoration: underline;
 }
 
-.post-date {
-    float: right;
-    color: #666;
-    font-size: 0.9em;
-}
-
-/* Стили для страницы создания поста */
+/* Форма создания/редактирования поста */
 .create-post-container {
     max-width: 800px;
     margin: 20px auto;
@@ -222,7 +263,6 @@ footer {
 }
 
 .create-post-container h1 {
-    margin-bottom: 20px;
     color: #333;
     text-align: center;
 }
@@ -233,7 +273,6 @@ footer {
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
     font-weight: bold;
     color: #333;
 }
@@ -253,12 +292,6 @@ footer {
     min-height: 150px;
 }
 
-.form-group .error {
-    color: #ff0000;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
 .submit-btn {
     display: block;
     width: 100%;
@@ -273,4 +306,26 @@ footer {
 
 .submit-btn:hover {
     opacity: 0.8;
+}
+
+/* Комментарии */
+.comments-section {
+    margin-top: 30px;
+}
+
+.comment {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-text {
+    margin-top: 5px;
+    color: #555;
 }
