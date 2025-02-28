@@ -22,5 +22,7 @@ urlpatterns = [
     # Лайки, дизлайки и закладки
     path('posts/<int:pk>/like/', like_dislike.toggle_like, name='toggle-like'),
     path('posts/<int:pk>/dislike/', like_dislike.toggle_dislike, name='toggle-dislike'),
+    path('bookmarks/', bookmark.bookmark_list, name='bookmark-list'),
+    path('bookmarks/<int:pk>/delete/', bookmark.bookmark_delete, name='bookmark-delete'),
     path('posts/<int:pk>/bookmark/', bookmark.toggle_bookmark, name='toggle-bookmark'),
 ]
